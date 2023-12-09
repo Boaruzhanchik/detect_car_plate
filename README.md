@@ -13,3 +13,16 @@ https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-w64-setup-5.3.3.2023100
 ```
 pip install opencv-python
 ```
+
+Установить тесеракт на линукс подобные системы
+
+```
+sudo apt install tesseract-ocr
+```
+
+Проверить установку 
+
+```
+tesseract --version
+```
+
