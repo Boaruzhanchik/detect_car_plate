@@ -5,14 +5,11 @@ import sqlite3
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 plate_cascade = cv2.CascadeClassifier(r'C:\Dev\detect_car_number\haarcascade_russian_plate_number.xml')
 
-
-# Подключитесь к базе данных
 conn = sqlite3.connect('vehicle_numbers.db')
 cursor = conn.cursor()
-
-# Получите список разрешенных номеров из базы данных
 cursor.execute("SELECT number FROM allowed_numbers")
 allowed_plate_numbers = [row[0] for row in cursor.fetchall()]
+
 
 def enlarge_img(image, scale_percent):
     width = int(image.shape[1] * scale_percent / 100)
