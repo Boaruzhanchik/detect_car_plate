@@ -12,10 +12,17 @@ allowed_plate_number = "H961BB82"  # Replace with your allowed plate number
 
 def open_barrier(plate_number):
     # Placeholder for the barrier opening logic
-    if allowed_plate_number in plate_number:
+    if any(plate in plate_number for plate in ALLOWED_PLATE_NUMBER):
         print(f"Barrier opened")
     else:
         print(f"Access denied ")
+        
+#def open_barrier(plate_number):
+    # Placeholder for the barrier opening logic
+    #if allowed_plate_number in plate_number:
+        #print(f"Barrier opened")
+    #else:
+        #print(f"Access denied ")
 
 for model in [model1, model2]:
     model.conf = 0.25
